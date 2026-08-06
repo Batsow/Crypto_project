@@ -16,10 +16,3 @@ c = "THIS MESSAGE IS TOP SECRET"
 c = c.replace(" ","")
 
 k = int(input("Enter your key: "))
-
-for char in c:
-    
-
-
-
-
