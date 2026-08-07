@@ -31,4 +31,10 @@ def number_to_letter(number):
 
 
 def clean_text(text):
-    return text.upper().replace(" ","")
+    letters = []
+    for char in text:
+        if char.isalpha():
+            letters.appendchar
+            
+    result = "".join(letters)
+    return results
