@@ -1,7 +1,11 @@
 from maths.alphabet import letter_to_number
 from maths.alphabet import number_to_letter
 from maths.alphabet import clean_text
+from ciphers.shift_cipher import encrypt
 
+'''
+Testing if the alphabet.py code works proper
+'''
 text1 = "This Message"
 text2 = ("Hello, World! I am 200 years old")
 
@@ -13,3 +17,19 @@ print(letter_to_number("T"))
 
 print(number_to_letter(0))
 print(number_to_letter(19))
+
+
+
+'''
+shift cipher test
+'''
+
+message = "THIS MESSAGE IS TOP SECRET"
+key = 3
+
+ciphertext = encrypt(message, key)
+print(ciphertext)
+
+print(encrypt("XYZ", 3))
+print(encrypt("HELLO", -3))
+
