@@ -32,9 +32,10 @@ def number_to_letter(number):
 
 def clean_text(text):
     letters = []
-    for char in text:
-        if char.isalpha():
-            letters.appendchar
+    for char in text.upper():
+        if char in ALPHABET:
+            letters.append(char)
             
     result = "".join(letters)
-    return results
+    return result
+
