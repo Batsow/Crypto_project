@@ -1,7 +1,8 @@
 from maths.alphabet import letter_to_number
 from maths.alphabet import number_to_letter
 from maths.alphabet import clean_text
-from ciphers.shift_cipher import encrypt
+from ciphers.shift_cipher import encrypt, decrypt
+
 
 '''
 Testing if the alphabet.py code works proper
@@ -28,8 +29,15 @@ message = "THIS MESSAGE IS TOP SECRET"
 key = 3
 
 ciphertext = encrypt(message, key)
-print(ciphertext)
+print("Ciphertext:", ciphertext)
 
 print(encrypt("XYZ", 3))
 print(encrypt("HELLO", -3))
+
+plaintext = decrypt(ciphertext, key)
+print("Plaintext:", plaintext)
+
+print(decrypt("ABC", 3))
+print(decrypt("HELLO", -3))
+
 
