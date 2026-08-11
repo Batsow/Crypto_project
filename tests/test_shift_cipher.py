@@ -17,7 +17,7 @@ class TestShiftCipher(unittest.TestCase):
         
     #testing relationship between encryption and decryption
     def test_encrypt_then_decrypt(self):
-        message = "THE QUIC BROWN FOX"
+        message = "THE QUICK BROWN FOX"
         key = 7
         
         ciphertext = encrypt(message, key)

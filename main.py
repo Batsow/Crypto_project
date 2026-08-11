@@ -3,6 +3,10 @@ from maths.alphabet import number_to_letter
 from maths.alphabet import clean_text
 from ciphers.shift_cipher import encrypt, decrypt
 
+from maths.gcd import gcd
+from maths.extended_euclidean import extended_gcd
+from maths.modular_inverse import modular_inverse
+
 
 '''
 Testing if the alphabet.py code works proper
@@ -39,5 +43,27 @@ print("Plaintext:", plaintext)
 
 print(decrypt("ABC", 3))
 print(decrypt("HELLO", -3))
+
+
+
+'''
+Testing the modular and gcd math
+'''
+print("GCD: ", gcd(48, 18))
+
+print("\nExtended GCD: ")
+gcd_value, x, y = extended_gcd(5, 26)
+
+print("gcd: ", gcd_value)
+print("x: ", x)
+print("y: ", y)
+
+print("\nVerfication")
+print(5 * x + 26*y)
+
+print("\nModular Inverse")
+print(modular_inverse(5, 26))
+
+
 
 
