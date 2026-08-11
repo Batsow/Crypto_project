@@ -31,11 +31,10 @@ The project is therefore being developed incrementally, with each algorithm intr
 - [ ] Hill Cipher
 
 ### Mathematical Foundations
-- [ ] Euclidean Algorithm
-- [ ] Extended Euclidean Algorithm
-- [ ] Greatest Common Divisor
-- [ ] Modular Arithmetic
-- [ ] Modular Inverse
+- [x] Euclidean Algorithm / Greatest Common Divisor
+- [x] Extended Euclidean Algorithm
+- [x] Modular Inverse
+- [ ] Modular Exponetiation
 - [ ] Prime Number Generation
 - [ ] Fast Modular Exponentiation
 
@@ -85,6 +84,37 @@ Therefore:
 H → K
 
 The implementation applies this transformation to every character in the plaintext.
+
+
+### Mathematical Foundations
+The cyprographic algoritms in this project are supposted by mathematical algorithms implemented from first principles.
+
+#### Greatest Common Divisor
+The Greatest Common Divisor (GCD) is calclated using the Euclidean Algorithm.
+The algorithm is based on the identity:
+
+    `gcd(a, b) = gcd(b, a mod b)`
+
+The process contines until the remainder becomes zero (0).
+For example:
+    gcd(48, 18)
+    48 mod 18 = 12
+    10 mod 12 = 6
+    12 mod 6 = 0
+
+Therefore:
+    gcd(48, 18) = 6
+
+
+#### Extended Euclidean Agorithm 
+The extended Euclidean Agorithm extends the normal Euclidian Algorithm by fininf integers x and y such that: 
+
+    `ax + bx = gcd(a, b)`
+
+This is important for cryptography because it allows us to calculate modular inverses.
+
+#### 
+
 
 ## Project Structure
 Crypto_project/ 
