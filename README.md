@@ -154,6 +154,7 @@ The project uses Python's unittest framework for automated testing.
 Tests can be executed using:
 
 python -m unittest
+python -m unittest discover -s tests
 
 The Shift Cipher currently tests:
 

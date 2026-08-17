@@ -1,4 +1,5 @@
 from maths.co_prime import is_coprime
+import unittest
 
 class TestCoprime(unittest.TestCase):
     def test_coprime_numbers(self):
