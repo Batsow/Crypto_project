@@ -1,6 +1,7 @@
-from maths.co_prime import is_coprime
 from maths.modular_inverse import modular_inverse
 from maths.alphabet import letter_to_number, number_to_letter, clean_text
+from maths.affine_keys import validate_affine_key
+
 
 '''
 Encrypt text using the Affine Cipher.
@@ -10,8 +11,7 @@ Formula:
 '''
 
 def encrypt(text, a, b):
-    if not is_coprime(a, 26):
-        raise ValueError(f"{a} is not valif for the Affine Cipher. a = {a} must be coprime with 26")
+    a, b = validate_affine_key(a, b)
     
     text = clean_text(text)
     ciphertext = ""
@@ -32,8 +32,7 @@ Formula:
 '''
 
 def decrypt(text, a, b):
-    if not is_coprime(a, 26):
-        raise ValueError(f"{a} is not valif for the Affine Cipher. a = {a} must be coprime with 26")
+    a, b = validate_affine_key(a, b)
     
     text = clean_text(text)
     plaintext = ""
