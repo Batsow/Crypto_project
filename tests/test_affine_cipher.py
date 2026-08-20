@@ -10,13 +10,29 @@ class TestAffineCipher(unittest.TestCase):
         self.assertEqual(decrypt("R", 5, 8), "H")
         
         
-    def test_encrypt_and_decrypt_word(self):
-        plaintext = "HELLO"
-        
+    def test_encrypt_word(self):
+        self.assertEqual(
+            encrypt("HELLO", 5, 8),
+            "RCLLA"
+        )
+
+    def test_decrypt_word(self):
+        self.assertEqual(
+            decrypt("RCLLA", 5, 8),
+            "HELLO"
+        )
+
+    def test_encrypt_then_decrypt(self):
+        plaintext = "THIS IS A SECRET MESSAGE"
+
         ciphertext = encrypt(plaintext, 5, 8)
-        decrypted = decrypt(ciphertext, 5, 8)
-        
-        self.assertEqual(decrypted, plaintext)
+        decrypted_text = decrypt(ciphertext, 5, 8)
+
+        self.assertEqual(
+            decrypted_text,
+            "THISISASECRETMESSAGE"
+        )
+    
         
         
 if __name__ == "__main__":
