@@ -45,5 +45,20 @@ class TestAffineCipher(unittest.TestCase):
     
         
         
+    def test_encrypt_cleans_text(self):
+        plaintext = "Hello, World! 123"
+
+        ciphertext = encrypt(plaintext, 5, 8)
+
+        self.assertEqual(ciphertext, "RCLLAOAPLX")
+        
+        
+    def test_decrypt_cleans_text(self):
+        ciphertext = "RCLLA OAPLX!!!"
+
+        plaintext = decrypt(ciphertext, 5, 8)
+
+        self.assertEqual(plaintext, "HELLOWORLD")
+        
 if __name__ == "__main__":
     unittest.main()
