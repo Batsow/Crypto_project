@@ -32,6 +32,16 @@ class TestAffineCipher(unittest.TestCase):
             decrypted_text,
             "THISISASECRETMESSAGE"
         )
+        
+        
+    def test_encrypt_with_invalid_a(self):
+        with self.assertRaises(ValueError):
+            encrypt("HELLO", 2, 8)
+
+
+    def test_decrypt_with_invalid_a(self):
+        with self.assertRaises(ValueError):
+            decrypt("RCLLA", 2, 8)
     
         
         
