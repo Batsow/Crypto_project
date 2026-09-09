@@ -38,6 +38,13 @@ class TestVigenereCipher(unittest.TestCase):
             decrypt(ciphertext, key), "ENEMYSIGNALS"
         )
         
+    def test_decrypt_sentence_2(self):
+        ciphertext = "WGZWT CASOK QGHS"
+        key = "WORKER"
+        self.assertEqual(
+            decrypt(ciphertext, key), "ASIMPLEEXAMPLE"
+        )
+        
         
         
     ## encryption → decryption round trip
@@ -52,6 +59,24 @@ class TestVigenereCipher(unittest.TestCase):
             decrypted_text, "THISISASECRETMESSAGE"
         )
         
+        
+    #testing to see if the Vigenere function uses clean text properly
+    def test_ecrypt_cleans_text(self):
+        plaintext = "Hello, World! 123"
+        key = "KEY"
+        
+        self.assertEqual(
+            encrypt(plaintext, key), "RIJVSUYVJN"
+        )
+        
+        
+    def test_decrypt_cleans_text(self):
+        ciphertext = "RIJVS UYVJN!!!"
+        key = "KEY"
+        
+        self.assertEqual(
+            decrypt(ciphertext, key), "HELLOWORLD"
+        )
         
         
         
