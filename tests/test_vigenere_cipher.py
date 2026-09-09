@@ -40,5 +40,20 @@ class TestVigenereCipher(unittest.TestCase):
         
         
         
+    ## encryption → decryption round trip
+    def test_encrypt_then_decrypt(self):
+        plaintext = "THIS IS A SECRET MESSAGE"
+        key = "LEMON"
+        
+        ciphertext = encrypt(plaintext, key)
+        decrypted_text = decrypt(ciphertext, key)
+        
+        self.assertEqual(
+            decrypted_text, "THISISASECRETMESSAGE"
+        )
+        
+        
+        
+        
 if __name__ == "__main__":
     unittest.main()
