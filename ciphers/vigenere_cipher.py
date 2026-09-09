@@ -29,3 +29,32 @@ def encrypt(text, key):
         ciphertext += ciphertext_letter
         
     return ciphertext
+
+
+
+'''
+Decrypt text using the Vigenère Cipher
+Formula: 
+
+    P = (C - K) mod 26
+    
+The key is repeayed across the ciphertext
+'''
+
+def decrypt(text, key):
+    text = clean_text(text)
+    key = clean_text(key)
+    plaintext = ""
+    
+    for index, letter in enumerate(text):
+        ciphertext_number = letter_to_number(letter)
+        
+        key_letter = key[index % len(key)]
+        key_number = letter_to_number(key_letter)
+        
+        plaintext_number = (ciphertext_number - key_number) % 26
+        plaintext_letter = number_to_letter(plaintext_number)
+        plaintext += plaintext_letter
+        
+    return plaintext
+        

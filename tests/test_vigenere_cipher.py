@@ -1,6 +1,7 @@
 import unittest
 
 from ciphers.vigenere_cipher import encrypt 
+from ciphers.vigenere_cipher import decrypt
 
 class TestVigenereCipher(unittest.TestCase):
     def test_encrypt_word(self):
@@ -20,6 +21,13 @@ class TestVigenereCipher(unittest.TestCase):
     def test_encrypt_with_repeating_key(self):
         self.assertEqual(
             encrypt("AAAAAAAAAA", "ABC"), "ABCABCABCA"
+        )
+        
+        
+    # decryption
+    def test_decrypt_word(self):
+        self.assertEqual(
+            decrypt("RIJVS", "KEY"), "HELLO"
         )
         
         
