@@ -7,3 +7,5 @@ for char in text:
 print(letters)
 result = "".join(letters)
 print(result)
+
+
