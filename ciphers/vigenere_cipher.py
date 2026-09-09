@@ -15,6 +15,8 @@ The key is repeated across the plaintext.
 def encrypt(text, key):
     text = clean_text(text)
     key = clean_text(key)
+    if not key:
+        raise ValueError("Vigenere key cannot be empty")
 
     ciphertext = ""
 
@@ -44,6 +46,9 @@ The key is repeayed across the ciphertext
 def decrypt(text, key):
     text = clean_text(text)
     key = clean_text(key)
+    if not key:
+        raise ValueError("Vigenere key cannot be empty")
+    
     plaintext = ""
     
     for index, letter in enumerate(text):

@@ -79,6 +79,16 @@ class TestVigenereCipher(unittest.TestCase):
         )
         
         
+    #testing that an empty key raises an error
+    def test_encrypt_with_empty_key(self):
+        with self.assertRaises(ValueError):
+            encrypt("HELLO", "")
+            
+    def test_decrypt_with_empty_key(self):
+        with self.assertRaises(ValueError):
+            decrypt("RIJVS", "")
+            
+        
         
 if __name__ == "__main__":
     unittest.main()
