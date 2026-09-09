@@ -30,6 +30,14 @@ class TestVigenereCipher(unittest.TestCase):
             decrypt("RIJVS", "KEY"), "HELLO"
         )
         
+    
+    def test_decrypt_sentence(self):
+        ciphertext = "JBBQQ XWDRS QG"
+        key = "FOXES"
+        self.assertEqual(
+            decrypt(ciphertext, key), "ENEMYSIGNALS"
+        )
+        
         
         
 if __name__ == "__main__":
