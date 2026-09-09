@@ -16,6 +16,12 @@ class TestVigenereCipher(unittest.TestCase):
             encrypt(sentence, key), "JBBQQXWDRSQG"
         )
         
+    
+    def test_encrypt_with_repeating_key(self):
+        self.assertEqual(
+            encrypt("AAAAAAAAAA", "ABC"), "ABCABCABCA"
+        )
+        
         
         
 if __name__ == "__main__":
