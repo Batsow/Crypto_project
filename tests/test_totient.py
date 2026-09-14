@@ -8,7 +8,10 @@ class TestTotient(unittest.TestCase):
         )
         
         
-    
+    def test_totient_9(self):
+        self.assertEqual(
+            totient(9), 6
+        )
         
     
 if __name__ == "__main__":
