@@ -9,7 +9,7 @@ class TestRSAKeyGeneration(unittest.TestCase):
             
     def test_calculates_modulus(self):
         self.assertEqual(
-            generate_keys(5,11), 55
+            generate_keys(5,11), (55,40)
         )
 
 if  __name__ == "__main__":
