@@ -9,5 +9,7 @@ def generate_keys(p, q):
     if not is_prime(p) or not is_prime(q):
         raise ValueError("Both p nd q must be prime numbers. ")
     
+    n = p * q
+    return n
     
     
